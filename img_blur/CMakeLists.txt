@@ -1,0 +1,11 @@
+find_package(OpenCV REQUIRED CONFIG)
+if (OpenCV_FOUND)
+    message("OpenCV found:")
+    message("\t" ${OpenCV_INCLUDE_DIRS})
+    message("\t" ${OpenCV_LIBS})
+endif()
+
+set(exec_name img_blur)
+add_executable(${exec_name} ${exec_name}.cu)
+target_include_directories(${exec_name} PUBLIC ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(${exec_name} ${OpenCV_LIBS})

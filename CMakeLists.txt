@@ -11,5 +11,12 @@ set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_60")
 
-add_subdirectory(cuda_basic)
+list(APPEND CMAKE_PREFIX_PATH "D:/JBYO/deps/opencv-4.10.0-install/x64/vc17/lib")
+# list(APPEND CMAKE_PREFIX_PATH "D:/JBYO/deps/opencv/build/x64/vc16/lib")
+
+
+
+add_subdirectory(mat_mul)
 add_subdirectory(vector_add)
+add_subdirectory(bgr2gray)
+add_subdirectory(img_blur)

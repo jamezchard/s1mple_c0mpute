@@ -1,10 +1,16 @@
 ---
-BasedOnStyle: Google
+BasedOnStyle: Microsoft
+AllowShortBlocksOnASingleLine: Empty
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: true
 BinPackParameters: false
-DerivePointerAlignment: false
-PointerAlignment: Right
-IndentWidth: 4
-ColumnLimit: 120
+ColumnLimit: 0
+# ColumnLimit: 100
 SortIncludes: false
-...
+---
+

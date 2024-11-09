@@ -1,21 +1,25 @@
 #include <cuda_runtime.h>
 #include <iostream>
 
-__global__ void vectorAddKernel(const float *A, const float *B, float *C, int N) {
+__global__ void vectorAddKernel(const float *A, const float *B, float *C, int N)
+{
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
-    if (idx < N) {
+    if (idx < N)
+    {
         C[idx] = A[idx] + B[idx];
     }
 }
 
-int main() {
+int main()
+{
     // --------------------------------------------------------------------------------
     // 1. allocate host memory
     // --------------------------------------------------------------------------------
     const int N = 1000;
     float A_h[N], B_h[N], C_h[N] = {0};
     std::srand(static_cast<unsigned int>(std::time(0)));
-    for (int i = 0; i < N; ++i) {
+    for (int i = 0; i < N; ++i)
+    {
         A_h[i] = static_cast<float>(std::rand()) / RAND_MAX;
         B_h[i] = static_cast<float>(std::rand()) / RAND_MAX;
     }

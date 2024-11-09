@@ -1,19 +1,23 @@
 #include <cuda_runtime.h>
 #include <iostream>
 
-__global__ void matMulKernel(const int *A, const int *B, int *C, int N) {
+__global__ void matMulKernel(const int *A, const int *B, int *C, int N)
+{
     int row = blockIdx.y * blockDim.y + threadIdx.y;
     int col = blockIdx.x * blockDim.x + threadIdx.x;
     int sum = 0;
-    if (row < N && col < N) {
-        for (int k = 0; k < N; ++k) {
+    if (row < N && col < N)
+    {
+        for (int k = 0; k < N; ++k)
+        {
             sum += A[row * N + k] * B[k * N + col];
         }
         C[row * N + col] = sum;
     }
 }
 
-int main() {
+int main()
+{
     const int N = 3;
     int A[N * N] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int B[N * N] = {9, 8, 7, 6, 5, 4, 3, 2, 1};
@@ -39,8 +43,10 @@ int main() {
     cudaFree(d_C);
 
     std::cout << "Result matrix:\n";
-    for (int i = 0; i < N; ++i) {
-        for (int j = 0; j < N; ++j) {
+    for (int i = 0; i < N; ++i)
+    {
+        for (int j = 0; j < N; ++j)
+        {
             std::cout << C[i * N + j] << " ";
         }
         std::cout << std::endl;
