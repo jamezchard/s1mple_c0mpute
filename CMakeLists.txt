@@ -20,3 +20,5 @@ add_subdirectory(mat_mul)
 add_subdirectory(vector_add)
 add_subdirectory(bgr2gray)
 add_subdirectory(img_blur)
+add_subdirectory(query_device_properties)
+
