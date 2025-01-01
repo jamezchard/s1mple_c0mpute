@@ -15,6 +15,7 @@ void printDeviceProperties(int deviceId)
     std::cout << "Device " << deviceId << ": " << prop.name << "\n";
     std::cout << "  Compute capability: " << prop.major << "." << prop.minor << "\n";
     std::cout << "  Total global memory: " << prop.totalGlobalMem / (1024.0 * 1024.0) << " MB\n";
+    std::cout << "  Total constant memory: " << prop.totalConstMem / 1024.0 << " KB\n";
     std::cout << "  Shared memory per SM: " << prop.sharedMemPerMultiprocessor / 1024.0 << " KB\n";
     std::cout << "  Shared memory per block: " << prop.sharedMemPerBlock / 1024.0 << " KB\n";
     std::cout << "  Registers per block: " << prop.regsPerBlock << "\n";
